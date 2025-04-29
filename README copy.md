@@ -1,6 +1,3 @@
-
-# Complex2-_Bone_-_Tooth_Battle
-
 ## Installation
 
 1. Clone repo
@@ -14,4 +11,3 @@
 ## Credit
 
 Modified from Scotch.io's auth tutorial
-

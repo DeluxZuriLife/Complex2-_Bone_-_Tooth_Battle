@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta charset="utf-8">
+        <meta name="Bone & Tooth Board Game" content="A remixed ticTacToe Game with new characters and timed moves">
+        <title>TicTacToe</title>
+		<link rel="stylesheet" href="style.css">
+    </head>
+    
+<body>
+
+<div class="intro">
+<h1>Get to Diggin!</h1>
+<p> My goal is to get an entire row of bones to resurrect the dead. 
+    Where she just wants a whole row of teeth to resume eating children with. 
+    We need you to do our bidding, pick a side!</p>
+    
+</div>
+
+<div class="Initiate">
+<label class="gameStart"></label>
+<div>
+    <button id="buddyButton"><img src="5buddyButton.jpg" alt="buddy"></button>
+</div>
+<div>
+    <button id="petuniaButton"><img src="6petuniaButton.jpg" alt="petunia"></button>
+</div>
+<button id="Begin">Burry Your Bones!</button>   
+</div>
+
+<section class="table">
+<section class="top">
+  <canvas id="tL"></canvas>
+  <canvas id="tC"></canvas>
+  <canvas id="tR"></canvas>  
+</section>
+<section class="middle">
+    <canvas id="mL"></canvas>
+    <canvas id="mC"></canvas>
+    <canvas id="mR"></canvas>
+</section>
+<section class="bottom">
+    <canvas id="bL"></canvas>
+    <canvas id="bC"></canvas>
+    <canvas id="bR"></canvas>
+</section>
+</section>
+
+<div class="declareWinner">
+<h1 id="claireWinner" class="declareWinner">Has Won!!!!!!</h1>
+<p id="winMessage" class="declareWinner">may there be joy to the world and peace for all.</p>
+</div>
+
+<script type="text/javascript" src="main.js"></script>
+</body>
+
