@@ -1,13 +1,12 @@
 module.exports = function(app, passport, db) {
 
-// normal routes ===============================================================
-
+// normal routes 
     // show the home page (will also have our login links)
     app.get('/', function(req, res) {
         res.render('index.ejs');
     });
 
-    // PROFILE SECTION =========================
+    // PROFILE SECTION 
     app.get('/profile', isLoggedIn, function(req, res) {
         db.collection('messages').find().toArray((err, result) => {
           if (err) return console.log(err)
@@ -18,7 +17,7 @@ module.exports = function(app, passport, db) {
         })
     });
 
-    // LOGOUT ==============================
+    // LOGOUT
     app.get('/logout', function(req, res) {
         req.logout(() => {
           console.log('User has logged out!')
@@ -26,7 +25,7 @@ module.exports = function(app, passport, db) {
         res.redirect('/');
     });
 
-// message board routes ===============================================================
+// message board routes
 
     app.post('/messages', (req, res) => {
       db.collection('messages').save({name: req.body.name, msg: req.body.msg, thumbUp: 0, thumbDown:0}, (err, result) => {
@@ -58,12 +57,9 @@ module.exports = function(app, passport, db) {
       })
     })
 
-// =============================================================================
-// AUTHENTICATE (FIRST LOGIN) ==================================================
-// =============================================================================
-
-    // locally --------------------------------
-        // LOGIN ===============================
+// AUTHENTICATE (FIRST LOGIN)
+    // locally
+        // LOGIN 
         // show the login form
         app.get('/login', function(req, res) {
             res.render('login.ejs', { message: req.flash('loginMessage') });
@@ -76,7 +72,7 @@ module.exports = function(app, passport, db) {
             failureFlash : true // allow flash messages
         }));
 
-        // SIGNUP =================================
+        // SIGNUP 
         // show the signup form
         app.get('/signup', function(req, res) {
             res.render('signup.ejs', { message: req.flash('signupMessage') });
@@ -89,9 +85,9 @@ module.exports = function(app, passport, db) {
             failureFlash : true // allow flash messages
         }));
 
-// =============================================================================
-// UNLINK ACCOUNTS =============================================================
-// =============================================================================
+// 
+// UNLINK ACCOUNTS 
+
 // used to unlink accounts. for social accounts, just remove the token
 // for local account, remove email and password
 // user account will stay active in case they want to reconnect in the future
